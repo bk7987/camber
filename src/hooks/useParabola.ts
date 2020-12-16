@@ -1,11 +1,5 @@
 import { useState } from 'react';
-
-interface Parabola {
-  length: number;
-  apex: number;
-  aCoeff: number;
-  bCoeff: number;
-}
+import { Parabola } from '../types';
 
 const calcParabola = (length: number, apex: number): Parabola => {
   const aCoeff = length > 0 ? (-4 * apex) / (length * length) : 0;

@@ -6,7 +6,7 @@ interface InputProps {
 }
 
 export const Input: React.FC<InputProps> = ({ label, onChange }) => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('0');
 
   const isNumeric = (text: string) => {
     const parsed = parseFloat(text);
@@ -18,7 +18,7 @@ export const Input: React.FC<InputProps> = ({ label, onChange }) => {
 
     if (val === '') {
       onChange(0);
-      return setValue(val);
+      return setValue('');
     }
 
     if (isNumeric(val)) {
@@ -33,7 +33,7 @@ export const Input: React.FC<InputProps> = ({ label, onChange }) => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-start">
       <label
         className="block text-gray-600 uppercase font-bold text-sm tracking-wide"
         htmlFor={label}
@@ -44,8 +44,9 @@ export const Input: React.FC<InputProps> = ({ label, onChange }) => {
         id={label}
         type="text"
         value={value}
+        onFocus={e => e.target.select()}
         onChange={handleChange}
-        className="p-2 w-32 text-right rounded border border-gray-300 focus:ring focus:outline-none focus:border-blue-300"
+        className="p-2 w-44 text-right rounded border border-gray-300 focus:ring focus:outline-none focus:border-blue-300"
       />
     </div>
   );
