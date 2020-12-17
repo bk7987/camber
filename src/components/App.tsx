@@ -4,6 +4,7 @@ import { Chart } from './Chart';
 import { IconAdjustments } from './icons/IconAdjustments';
 import { Input } from './Input';
 import { ParabolaInfo } from './ParabolaInfo';
+import { getPoints } from '../utils';
 
 export const App: React.FC = () => {
   const [parabola, setParabola] = useParabola({ length: 0, apex: 0 });
@@ -26,7 +27,7 @@ export const App: React.FC = () => {
           <ParabolaInfo parabola={parabola} />
         </div>
       </div>
-      <div>
+      <div className="mt-12">
         <Chart parabola={parabola} />
       </div>
     </div>

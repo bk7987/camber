@@ -4,3 +4,8 @@ export interface Parabola {
   aCoeff: number;
   bCoeff: number;
 }
+
+export interface Point {
+  x: number;
+  y: number;
+}
